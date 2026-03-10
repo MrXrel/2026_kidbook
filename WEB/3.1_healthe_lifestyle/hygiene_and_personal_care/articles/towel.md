@@ -3,7 +3,7 @@
 <img src="../Attachments/towel.png" align="right" width="300" alt="Личное полотенце" style="margin-left: 20px; margin-bottom: 20px;">
 
 **ID:** `towel`  
-**WikiData:** [Q131799](https://www.wikidata.org/wiki/Q131799)  
+**WikiData:** [Q131696](https://www.wikidata.org/wiki/Q131696)  
 **Раздел:** 3.1. Здоровый образ жизни
 
 
