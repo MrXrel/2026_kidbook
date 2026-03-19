@@ -3,8 +3,8 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
-CONCEPTS_PATH = ROOT / "WORK" / "6_1_reasonable_spending" / "concepts.json"
-PAGES_DIR = ROOT / "WEB" / "6_1_reasonable_spending" / "articles"
+CONCEPTS_PATH = ROOT / "WORK" / "6.1_reasonable_spending" / "concepts.json"
+PAGES_DIR = ROOT / "WEB" / "6.1_reasonable_spending" / "articles"
 
 
 def load_concepts():
