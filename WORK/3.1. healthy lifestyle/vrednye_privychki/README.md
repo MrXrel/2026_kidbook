@@ -77,6 +77,66 @@ graph TD
     class VP root
 ```
 
+## 🔗 Граф перекрёстных ссылок между статьями
+
+> 64 ссылки расставлены автоматически скриптом `crosslink.py` с учётом падежей (pymorphy3)
+
+```mermaid
+graph LR
+    %% Узлы
+    SMOKE["Курение"]
+    ALC["Алкоголь"]
+    ENERGY["Энергетики"]
+    DRUGS["Мифы о наркотиках"]
+    OD["Передозировка"]
+    DOPA["Дофамин"]
+    ADDICT["Зависимость и личность"]
+    SM["Соцсети"]
+    DOOM["Думскроллинг"]
+    GAMES["Комп. игры"]
+    LUDO["Лудомания"]
+    SHOP["Шопоголизм"]
+    FF["Фастфуд"]
+    SEDEN["Малоподвижность"]
+    SLEEP["Недосыпание"]
+    KNUCK["Суставы"]
+    NAILS["Онихофагия"]
+    PREV["Профилактика"]
+
+    %% Ссылки (64)
+    SMOKE --> ADDICT
+    ALC --> ADDICT
+    ENERGY --> DOPA & ADDICT & SLEEP & ALC & OD
+    DRUGS --> FF & ADDICT & DOPA & ALC
+    OD --> DRUGS & ENERGY & ALC & ADDICT
+    DOPA --> FF & SM & ADDICT
+    ADDICT --> GAMES & DRUGS & OD & SLEEP
+    SM --> ADDICT & DOOM
+    DOOM --> DOPA & SLEEP
+    GAMES --> DOOM & DOPA & SEDEN & SLEEP
+    LUDO --> ADDICT & PREV & GAMES & SLEEP & ALC & DRUGS
+    SHOP --> DOPA & ADDICT & SM & DOOM & OD
+    FF --> DRUGS & DOPA & SM & NAILS & ENERGY
+    SEDEN --> SMOKE & ALC & DOPA & ENERGY
+    SLEEP --> ALC & DOPA & DOOM & ENERGY
+    KNUCK --> DOOM & SEDEN
+    NAILS --> DOOM
+    PREV --> DOPA & DRUGS & FF & SMOKE & ADDICT & DOOM & ALC
+
+    %% Стили
+    classDef substance fill:#ffcdd2,stroke:#c62828
+    classDef mechanism fill:#e1bee7,stroke:#6a1b9a
+    classDef digital fill:#bbdefb,stroke:#1565c0
+    classDef lifestyle fill:#fff9c4,stroke:#f9a825
+    classDef shield fill:#c8e6c9,stroke:#2e7d32
+
+    class SMOKE,ALC,ENERGY,DRUGS,OD substance
+    class DOPA,ADDICT mechanism
+    class SM,DOOM,GAMES,LUDO,SHOP digital
+    class FF,SEDEN,SLEEP,KNUCK,NAILS lifestyle
+    class PREV shield
+```
+
 ## 📋 Таблица понятий
 
 | # | Понятие | WikiData | Категория | Автор |
